@@ -28,8 +28,8 @@ return [
      *
      * Credentials
      */
-    'orange' => [
-        'key' => env('ORANGE_SMS_API'),
-        'secret' => env('ORANGE_SMS_SECRET'),
+    'osms' => [
+        'key' => env('OSMS_API'),
+        'secret' => env('OSMS_SECRET'),
     ];
 ];

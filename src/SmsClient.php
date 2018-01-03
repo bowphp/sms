@@ -24,7 +24,7 @@ class SmsClient implements Driver\DriverContrats
      */
     private $driver = [
         'nexmo' => \Papac\Sms\Driver\NexmoDriver::Class,
-        'orange' => \Papac\Sms\Driver\OrangeDriver::Class,
+        'osms' => \Papac\Sms\Driver\OrangeDriver::Class,
     ];
 
     /**
