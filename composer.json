@@ -1,0 +1,24 @@
+{
+    "name": "papac/bow-sms",
+    "description": "The bow framework sms gateway",
+    "type": "library",
+    "require": {
+        "nexmo/client": "^1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Franck Dakia",
+            "email": "dakiafranck@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Papac\\Sms\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^7.0@dev"
+    }
+}
