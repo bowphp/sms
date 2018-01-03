@@ -9,7 +9,7 @@ return [
     /**
      * The brand name of
      */
-    'from' => env('FROM_NUMBER'),
+    'from' => env('SMS_FROM_NUMBER'),
 
     /**
      * Nexmo SMS
