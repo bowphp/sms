@@ -6,10 +6,10 @@ class Sms
 {
     /**
      * __callStatic
-     * 
+     *
      * @param string $method
      * @param array $args
-     * 
+     *
      * @return mixed
      */
     public static function __callStatic($method, array $args)

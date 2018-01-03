@@ -20,7 +20,7 @@ class SmsClient implements Driver\DriverContrats
     private static $instance;
 
     /**
-     * @var array 
+     * @var array
      */
     private $driver = [
         'nexmo' => \Papac\Sms\Driver\NexmoDriver::Class,
@@ -42,8 +42,8 @@ class SmsClient implements Driver\DriverContrats
 
     /**
      * Get the define driver
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function getDriver()
     {
@@ -68,7 +68,7 @@ class SmsClient implements Driver\DriverContrats
 
     /**
      * Make configuration
-     * 
+     *
      * @param array $config
      */
     public static function configure($config)
@@ -80,7 +80,7 @@ class SmsClient implements Driver\DriverContrats
 
     /**
      * Get SmsClient instance
-     * 
+     *
      * @return SmsClient
      */
     public function getInstance()
