@@ -7,7 +7,7 @@ return [
     'driver' => env('SMS_DRIVER'),
 
     /**
-     * The brand name of
+     * The sender number
      */
     'from' => env('SMS_FROM_NUMBER'),
 
