@@ -3,18 +3,10 @@
 namespace Papac\Sms;
 
 use Bow\Config\Config;
-use Bow\Application\Services;
+use Bow\Application\Service;
 
-class SmsService extends Services
+class SmsService extends Service
 {
-    /**
-     * Start service
-     */
-    public function start()
-    {
-        //
-    }
-
     /**
      * Make view setting
      *
@@ -22,13 +14,26 @@ class SmsService extends Services
      */
     public function make(Config $config)
     {
-        $sms = $config['sms'];
+        $sms_cf = (array) $config['sms'];
         
-        if (is_null($sms)) {
-            $sms = require __DIR__.'/../config/sms.php';
-            $config['sms'] = $sms;
-        }
+        $r = require __DIR__.'/../config/sms.php';
 
-        SmsClient::configure($sms);
+        $sms_cf = array_merge($r, $sms_cf);
+
+        $config('sms', $sms_cf);
+
+        $this->app->capsule('sms', function () use ($sms_cf) {
+            return SmsClient::configure($sms_cf);
+        });
+    }
+
+    /**
+     * Start service
+     *
+     * @return mixed
+     */
+    public function start()
+    {
+        return $this->app->capsule('sms');
     }
 }

@@ -20,6 +20,6 @@ class Sms
             return call_user_func_array([$instance, $method], $args);
         }
 
-        throw new \BadMethodException(sprint('%s method not exists', $method));
+        throw new \BadMethodCallException(sprintf('%s method not exists', $method));
     }
 }

@@ -5,7 +5,7 @@ namespace Papac\Sms\Driver;
 use Nexmo\Client;
 use Nexmo\Client\Credentials\Basic;
 
-class NexmoDriver implements SmsContracts
+class NexmoDriver implements DriverContrats
 {
     /**
      * @var array
@@ -27,29 +27,30 @@ class NexmoDriver implements SmsContracts
         $this->config = $config;
         
         $basic = new Basic($config['key'], $config['secret']);
+
         $this->client = new Client($basic);
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function send($to, $text, callable $callable = null)
     {
         $message = $this->client->message()->send([
             'to' => $to,
-            'from' => $this->config['from'],
+            'from' => $this->config['brand'],
             'text' => $text
         ]);
 
         if (is_callable($callable)) {
-            return $callable($message)
+            return $callable($message);
         }
 
         return (array) $message;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function verify($number, $brand = null)
     {
@@ -64,6 +65,7 @@ class NexmoDriver implements SmsContracts
         }
 
         $verification = $this->client->verify()->start($params);
+
         return $verification;
     }
 }

@@ -7,19 +7,23 @@ interface DriverContrats
     /**
      * Send the message
      *
-     * @param string $to
+     * @param array|string $to
      * @param string $text
      * @param callable $callable
-     *
+     * @throws \Exception
      * @return mixed
      */
     public function send($to, $text, callable $callable = null);
 
     /**
-     * Check number
-     *
-     * @param string $number
-     * @param string $brand
+     * Get sms credits
      */
-    public function verify($number, $brand = null);
+    public function credits();
+
+    /**
+     * Get sms message sended
+     *
+     * @return array
+     */
+    public function messages();
 }

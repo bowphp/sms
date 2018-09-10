@@ -21,7 +21,7 @@ return [
         'secret' => env('NEXMO_SECRET'),
         'ttl' => env('NEXMO_TTL'),
         'brand' => env('NEXMO_BRAND')
-    ];
+    ],
 
     /**
      * Orange SMS API
@@ -31,5 +31,16 @@ return [
     'osms' => [
         'key' => env('OSMS_API'),
         'secret' => env('OSMS_SECRET'),
-    ];
+    ],
+
+    /**
+     * MonTexto SMS API
+     *
+     * Credentials
+     */
+    'montexto' => [
+        'email' => env('MONTEXTO_EMAIL'),
+        'password' => env('MONTEXTO_PASSWORD'),
+        'brand' => env('MONTEXTO_SENDERNAME'),
+    ]
 ];

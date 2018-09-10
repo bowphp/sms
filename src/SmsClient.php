@@ -10,7 +10,7 @@ class SmsClient implements Driver\DriverContrats
     private $client;
 
     /**
-     * @var Config
+     * @var array
      */
     private $config;
 
@@ -25,16 +25,18 @@ class SmsClient implements Driver\DriverContrats
     private $driver = [
         'nexmo' => \Papac\Sms\Driver\NexmoDriver::Class,
         'osms' => \Papac\Sms\Driver\OrangeDriver::Class,
+        'montexto' => \Papac\Sms\Driver\MontextoDriver::Class,
     ];
 
     /**
      * Sms constructor.
      *
-     * @param Config $config
+     * @param array $config
      */
     public function __construct(array $config)
     {
         $this->config = $config;
+
         $driver = $config['driver'];
 
         $this->client = new $this->driver($config[$driver]);
@@ -51,7 +53,7 @@ class SmsClient implements Driver\DriverContrats
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function send($to, $text, callable $callable = null)
     {
@@ -59,7 +61,7 @@ class SmsClient implements Driver\DriverContrats
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function verify($number, $brand = null)
     {
@@ -70,12 +72,15 @@ class SmsClient implements Driver\DriverContrats
      * Make configuration
      *
      * @param array $config
+     * @return self
      */
-    public static function configure($config)
+    public static function configure(array $config)
     {
-        $this->instance = new static($config);
+        if (is_null(static::$instance)) {
+            static::$instance = new static($config);
+        }
 
-        return $instance;
+        return static::$instance;
     }
 
     /**
@@ -83,8 +88,8 @@ class SmsClient implements Driver\DriverContrats
      *
      * @return SmsClient
      */
-    public function getInstance()
+    public static function getInstance()
     {
-        return $this->instance;
+        return static::$instance;
     }
 }
