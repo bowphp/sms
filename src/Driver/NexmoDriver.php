@@ -1,6 +1,6 @@
 <?php
 
-namespace Papac\Sms\Driver;
+namespace Bow\Sms\Driver;
 
 use Nexmo\Client;
 use Nexmo\Client\Credentials\Basic;

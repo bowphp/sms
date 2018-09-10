@@ -1,6 +1,6 @@
 <?php
 
-namespace Papac\Sms;
+namespace Bow\Sms;
 
 use Bow\Config\Config;
 use Bow\Application\Service;

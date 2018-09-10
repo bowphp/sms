@@ -1,6 +1,6 @@
 <?php
 
-namespace Papac\Sms;
+namespace Bow\Sms;
 
 class Sms
 {

@@ -1,5 +1,5 @@
 {
-    "name": "papac/bow-sms",
+    "name": "bowphp/sms",
     "description": "The bow framework sms gateway",
     "type": "library",
     "require": {
@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Papac\\Sms\\": "src/"
+            "Bow\\Sms\\": "src/"
         }
     },
     "minimum-stability": "dev",

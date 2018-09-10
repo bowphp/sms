@@ -1,6 +1,6 @@
 <?php
 
-use Papac\Sms\SmsClient;
+use Bow\Sms\SmsClient;
 
 class SendTest extends \PHPUnit\Framework\TestCase
 {

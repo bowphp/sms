@@ -1,6 +1,6 @@
 <?php
 
-namespace Papac\Sms\Driver;
+namespace Bow\Sms\Driver;
 
 interface DriverContrats
 {
