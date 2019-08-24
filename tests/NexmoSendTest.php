@@ -2,7 +2,7 @@
 
 use Bow\Sms\SmsClient;
 
-class SendTest extends \PHPUnit\Framework\TestCase
+class NexmoSendTest extends \PHPUnit\Framework\TestCase
 {
     public function testInstance()
     {

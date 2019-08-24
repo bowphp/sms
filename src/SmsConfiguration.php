@@ -5,14 +5,14 @@ namespace Bow\Sms;
 use Bow\Config\Config;
 use Bow\Application\Service;
 
-class SmsService extends Service
+class SmsConfiguration extends Service
 {
     /**
      * Make view setting
      *
      * @param Config $config
      */
-    public function make(Config $config)
+    public function create(Config $config)
     {
         $sms_cf = (array) $config['sms'];
         
@@ -32,7 +32,7 @@ class SmsService extends Service
      *
      * @return mixed
      */
-    public function start()
+    public function run()
     {
         return $this->app->capsule('sms');
     }

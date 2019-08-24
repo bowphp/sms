@@ -2,7 +2,7 @@
 
 namespace Bow\Sms\Driver;
 
-interface DriverContrats
+interface SmsDriverContrats
 {
     /**
      * Send the message

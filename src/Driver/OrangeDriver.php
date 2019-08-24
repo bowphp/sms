@@ -2,7 +2,7 @@
 
 namespace Bow\Sms\Driver;
 
-class OrangeDriver implements DriverContrats
+class OrangeDriver implements SmsDriverContrats
 {
     /**
      * @var array

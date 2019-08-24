@@ -4,7 +4,7 @@ return [
     /**
      * The definte driver
      */
-    'driver' => env('SMS_DRIVER'),
+    'driver' => env('SMS_DRIVER', 'osms'),
 
     /**
      * The sender number

@@ -2,7 +2,7 @@
 
 namespace Bow\Sms\Driver;
 
-class MontextoDriver implements DriverContrats
+class MontextoDriver implements SmsDriverContrats
 {
     /**
      * @var array
