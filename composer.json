@@ -20,7 +20,8 @@
     "require-dev": {
         "phpunit/phpunit": "^7.0@dev",
         "papac/montexto": "dev-master",
-        "nexmo/client": "^1.2"
+        "nexmo/client": "^1.2",
+        "adjemin/mtnsmscloud": "^1.0"
     },
     "minimum-stability": "stable"
 }

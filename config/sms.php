@@ -2,14 +2,14 @@
 
 return [
     /**
-     * The definte driver
+     * The define driver
      */
-    'driver' => env('SMS_DRIVER', 'osms'),
+    'driver' => app_env('SMS_DRIVER', 'osms'),
 
     /**
      * The sender number
      */
-    'from' => env('SMS_FROM_NUMBER'),
+    'from' => app_env('SMS_FROM_NUMBER'),
 
     /**
      * Nexmo SMS
@@ -17,10 +17,10 @@ return [
      * Credentials
      */
     'nexmo' => [
-        'key' => env('NEXMO_API'),
-        'secret' => env('NEXMO_SECRET'),
-        'ttl' => env('NEXMO_TTL'),
-        'brand' => env('NEXMO_BRAND')
+        'key' => app_env('NEXMO_API'),
+        'secret' => app_env('NEXMO_SECRET'),
+        'ttl' => app_env('NEXMO_TTL'),
+        'brand' => app_env('NEXMO_BRAND')
     ],
 
     /**
@@ -29,8 +29,9 @@ return [
      * Credentials
      */
     'osms' => [
-        'key' => env('OSMS_API'),
-        'secret' => env('OSMS_SECRET'),
+        'key' => app_env('OSMS_API'),
+        'secret' => app_env('OSMS_SECRET'),
+        'brand' => app_env('OSMS_BRAND_NAME'),
     ],
 
     /**
@@ -39,8 +40,19 @@ return [
      * Credentials
      */
     'montexto' => [
-        'email' => env('MONTEXTO_EMAIL'),
-        'password' => env('MONTEXTO_PASSWORD'),
-        'brand' => env('MONTEXTO_SENDERNAME'),
+        'email' => app_env('MONTEXTO_EMAIL'),
+        'password' => app_env('MONTEXTO_PASSWORD'),
+        'brand' => app_env('MONTEXTO_SENDERNAME'),
+    ],
+
+    /**
+     * MTNSMSCLOUD API
+     *
+     * Credentials
+     */
+    'mtnsmscloud' => [
+        'sender_id' => app_env('MTNSMSCLOUD_SENDER_ID'),
+        'token' => app_env('MTNSMSCLOUD_TOKEN'),
+        'brand' => app_env('MTNSMSCLOUD_BRAND_NAME'),
     ]
 ];

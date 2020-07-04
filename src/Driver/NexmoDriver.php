@@ -2,10 +2,11 @@
 
 namespace Bow\Sms\Driver;
 
+use Bow\Sms\Contracts\SmsDriverContract;
 use Nexmo\Client;
 use Nexmo\Client\Credentials\Basic;
 
-class NexmoDriver implements SmsDriverContrats
+class NexmoDriver implements SmsDriverContract
 {
     /**
      * @var array

@@ -2,35 +2,31 @@
 
 namespace Bow\Sms;
 
-use Bow\Config\Config;
+use Bow\Configuration\Loader as Config;
 use Bow\Application\Service;
 
 class SmsConfiguration extends Service
 {
     /**
-     * Make view setting
-     *
-     * @param Config $config
+     * @inheritDoc
      */
     public function create(Config $config)
     {
-        $sms_cf = (array) $config['sms'];
+        $sms = (array) $config['sms'];
         
         $r = require __DIR__.'/../config/sms.php';
 
-        $sms_cf = array_merge($r, $sms_cf);
+        $sms = array_merge($r, $sms);
 
-        $config('sms', $sms_cf);
+        $config('sms', $sms);
 
-        $this->app->capsule('sms', function () use ($sms_cf) {
-            return SmsClient::configure($sms_cf);
+        $this->app->capsule('sms', function () use ($sms) {
+            return SmsClient::configure($sms);
         });
     }
 
     /**
-     * Start service
-     *
-     * @return mixed
+     * @inheritDoc
      */
     public function run()
     {

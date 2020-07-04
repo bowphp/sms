@@ -2,19 +2,27 @@
 
 namespace Bow\Sms;
 
-class SmsClient implements Driver\DriverContrats
+use Bow\Sms\Contracts\SmsDriverContract;
+
+class SmsClient implements SmsDriverContract
 {
     /**
+     * Define the client instance
+     * 
      * @var mixed
      */
     private $client;
 
     /**
+     * Define the configuration
+     * 
      * @var array
      */
     private $config;
 
     /**
+     * Define singleton API
+     * 
      * @var SmsClient
      */
     private static $instance;
